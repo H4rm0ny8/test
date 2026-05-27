@@ -8,6 +8,7 @@ tags:
   - red-team
   - notes
 summary: Quick checklist for safer tradecraft during engagements and lab work.
+draft: true
 ---
 
 ## Why OPSEC matters

@@ -13,6 +13,7 @@ tags:
 summary: GPP password leak to Kerberoasting and offline hash cracking.
 initialAccess: GPP decryption via Groups.xml to recover cleartext credentials.
 privesc: Kerberoasting Administrator SPN and cracking the hash offline.
+draft: true
 ---
 
 ## 01. Enumeration

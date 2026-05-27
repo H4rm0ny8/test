@@ -13,6 +13,7 @@ tags:
 summary: SSRF in Request-Baskets leading to foothold, then sudo abuse for root.
 initialAccess: SSRF exploitation in Request-Baskets (CVE-2023-27163).
 privesc: Sudo privileges on /usr/bin/systemctl status.
+draft: true
 ---
 
 ## 01. Enumeration
