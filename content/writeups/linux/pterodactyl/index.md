@@ -16,7 +16,7 @@ initialAccess: RCE on Pterodactyl panel path and service pivots.
 privesc: Chained local misconfig/exploit path to execute SUID bash and get root.
 ---
 
-# any
+# Pterodactyl
 
 ok first as we do every time start with the nmap scan 
 
@@ -306,31 +306,21 @@ so we should search for something about this https://success.qualys.com/discussi
 
 it combines two vulns together **CVE-2025-6018 + CVE-2025-6019 Exploit Chain as it says in the blog** 
 
-- Allow User
+``` bash
+  - Allow User
     
-    طيب تعال هيك نتكلم عربي ونشرح : 
+
+    خلينا نوضح بشكل مختصر: polkit هو النظام المسؤول عن التحكم في صلاحيات العمليات المرتبطة بالـ disks والmounts على لينكس. لما المستخدم ينفذ عملية معينة، polkit يصنف الجلسة حسب 3 أنواع:
+
+    | المستوى            | الشرح | مثال                  |
+    |--------------------|-------|-----------------------|
+    | **allow_active**   | المستخدم جالس فعلياً على الجهاز (console أو GUI) | أعلى صلاحية    |
+    | **allow_inactive** | مستخدم محلي لكن مش active    | صلاحية وسط      |
+    | **allow_any**      | أي جلسة—even ريموت (SSH, VNC)    | أقل صلاحية عادة |
+
+```
     
-    طيب في شي اسمه polkit الي هو نظام بيدير ال mounts على الجهاز وكمان ال disks والصلاحيات عليها 
-    
-    طيب لما يوزر يعمل action بيروح هاد بيشوف شو انت من التلات حاجات الي هم : 
-    
-    | المستوى | يعني إيه؟ | مثال |
-    | --- | --- | --- |
-    | **allow_active** | اليوزر **active** (جالس قدام الجهاز فعلياً – local console أو GUI session) | أكثر صلاحية |
-    | **allow_inactive** | اليوزر local بس **مش active** (مثلاً فتحت terminal جديد أو switched console) | أقل صلاحية |
-    | **allow_any** | أي session، حتى لو remote (SSH، VNC، إلخ) | أقل صلاحية عادة |
-    
-    > 
-    > 
-    > 
-    > الـ CVE-2025-6018 (PAM Injection عبر ~/.pam_environment) بيخدع **systemd-logind** عشان يعتقد إن session بتاعتك **active console** (كأنك قاعد قدام الشاشة).
-    > 
-    > لما تنجح في ده → الـ session بتاعتك تصير **Active=yes** → Polkit يديك **allow_active** privileges.
-    > 
-    > وبعدين تقدر تستخدم udisks2 (CVE-2025-6019) عشان تعمل الـ XFS race condition وتصير root.
-    > 
-    
-    ```jsx
+  ```jsx
     CVE-2025-6019 – libblockdev / udisks LPE
     
     Affected Systems: Most Linux distributions with udisks daemon
@@ -342,13 +332,13 @@ it combines two vulns together **CVE-2025-6018 + CVE-2025-6019 Exploit Chain as 
     Allows mounting malicious images with improper security flags (nosuid, nodev) to gain full root privileges.
     
     Impact: Local attacker can achieve full root access.
-    ```
+  ```
     
     as u can see we can chain them to get our root shell ;) 
     
     now lets get our exploit to put it on the victim system 
     
-    ```bash
+   ```bash
     git clone https://github.com/DesertDemons/CVE-2025-6018-6019.githi
     ```
     
