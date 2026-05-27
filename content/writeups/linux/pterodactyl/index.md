@@ -320,7 +320,7 @@ it combines two vulns together **CVE-2025-6018 + CVE-2025-6019 Exploit Chain as 
 
 ```
     
-  ```jsx
+```jsx
     CVE-2025-6019 – libblockdev / udisks LPE
     
     Affected Systems: Most Linux distributions with udisks daemon
@@ -338,7 +338,7 @@ it combines two vulns together **CVE-2025-6018 + CVE-2025-6019 Exploit Chain as 
     
     now lets get our exploit to put it on the victim system 
     
-   ```bash
+```bash
     git clone https://github.com/DesertDemons/CVE-2025-6018-6019.githi
     ```
     
