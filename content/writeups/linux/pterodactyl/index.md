@@ -334,7 +334,7 @@ it combines two vulns together **CVE-2025-6018 + CVE-2025-6019 Exploit Chain as 
     Impact: Local attacker can achieve full root access.
   ```
     
-    as u can see we can chain them to get our root shell ;) 
+as u can see we can chain them to get our root shell ;) 
     
     now lets get our exploit to put it on the victim system 
     
