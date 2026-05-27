@@ -336,7 +336,7 @@ it combines two vulns together **CVE-2025-6018 + CVE-2025-6019 Exploit Chain as 
     
 as u can see we can chain them to get our root shell ;) 
     
-    now lets get our exploit to put it on the victim system 
+now lets get our exploit to put it on the victim system 
     
 ```bash
     git clone https://github.com/DesertDemons/CVE-2025-6018-6019.githi
