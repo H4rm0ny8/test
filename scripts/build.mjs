@@ -471,7 +471,7 @@ function renderHub(writeups, blogs) {
       <p class="hub-note">
         <a href="https://h4rm0ny8.github.io/profile/" target="_blank" rel="noopener noreferrer">> Back to Profile</a>
         <span style="opacity:0.5"> | </span>
-        
+        Hacking is an art.
       </p>
     </header>
     ${writeupSections}
