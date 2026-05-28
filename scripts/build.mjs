@@ -468,7 +468,7 @@ function renderHub(writeups, blogs) {
       </div>
 
       <p class="hub-note">
-        <a href="https://h4rm0ny8.github.io/profile/" target="_blank" rel="noopener noreferrer" style="color: var(--green);">> Back to Profile</a>
+        <a href="https://h4rm0ny8.github.io/profile/" target="_blank" rel="noopener noreferrer" style="color: var(--green);">> Profile</a>
         <span style="opacity:0.5"> | </span>
         Hacking is an art.
       </p>
