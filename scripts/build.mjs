@@ -476,11 +476,11 @@ function renderHub(writeups, blogs) {
     </header>
     ${writeupSections}
     ${blogSection}
-    <footer>
+    <!-- <footer>
       <span class="hex-dot" aria-hidden="true"></span>
       H4rm0ny Content Hub &copy; ${new Date().getFullYear()}
       <span class="hex-dot" aria-hidden="true"></span>
-    </footer>`;
+    </footer> -->`;
 
   return pageShell({ title: "H4rm0ny Content Hub", body, depth: 0, navDots });
 }
