@@ -471,7 +471,7 @@ function renderHub(writeups, blogs) {
       <p class="hub-note">
         <a href="https://h4rm0ny8.github.io/profile/" target="_blank" rel="noopener noreferrer">> Back to Profile</a>
         <span style="opacity:0.5"> | </span>
-        Add <code>.md</code> files under <code>content/</code>, push to GitHub, and Pages rebuilds automatically.
+        
       </p>
     </header>
     ${writeupSections}
