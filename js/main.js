@@ -99,9 +99,8 @@ if (glow) {
 const typeEl = document.getElementById("typewriter");
 if (typeEl) {
   const titles = [
-    "Active Directory Operator",
-    "Linux PrivEsc Hunter",
-    "Windows AD Exploits",
+    "Penetration Tester",
+    "Red Team Enthusiast",
     "Bug Bounty Hunter",
     "CTF Player",
   ];
