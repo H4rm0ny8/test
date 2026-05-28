@@ -263,7 +263,6 @@ function pageShell({ title, body, depth, navDots = "" }) {
   ${navDots}
 
   <main class="page">
-    <p class="back-link"><a href="${home}">← Back to Hub</a></p>
     ${body}
     <footer>
       <span class="hex-dot" aria-hidden="true"></span>
