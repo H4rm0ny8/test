@@ -3,7 +3,7 @@ title: Pterodactyl
 type: writeup
 category: linux
 platform: HTB
-difficulty: hard
+difficulty: Medium
 os: Linux
 date: 2026-04-19
 tags:
