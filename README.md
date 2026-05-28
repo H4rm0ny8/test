@@ -1,87 +1,47 @@
-# H4rm0ny Content Hub (`test`)
+# My HTB and CTF Writeups
 
-Static site for **HTB/THM writeups** and **cyber blogs**, built from Markdown files. Same green terminal theme as the profile site.
+Welcome to my personal collection of Hack The Box and CTF writeups. This repository documents my journey through various machines, challenges, and security research, focusing on clear explanations, practical exploit chains, and practical troubleshooting notes.
 
-## Workflow (Obsidian → GitHub → Site)
+## Featured Writeups
 
-1. Open this repo folder as an **Obsidian vault** (or only the `content/` folder).
-2. Create or edit `.md` files under `content/`.
-3. Commit and **push** to `main`.
-4. GitHub Actions runs `npm run build` and deploys `_site/` to Pages.
+| Machine Name | Platform | Difficulty | Key Focus / CVEs |
+| :--- | :--- | :--- | :--- |
+| **Pterodactyl** | HTB | Medium | CVE-2025-49132, CVE-2025-6018, CVE-2025-6019 |
+| *More coming soon...* | - | - | - |
 
-## Where to put Markdown
+---
 
-### Writeups
+## Methodology
 
-```
-content/writeups/<category>/<slug>.md
-```
+1.  **Reconnaissance**: Comprehensive Nmap scans and service discovery.
+2.  **Enumeration**: Detailed analysis of web applications, subdomains, and hidden directories.
+3.  **Exploitation**: Leveraging known vulnerabilities or identifying logic flaws for initial access.
+4.  **Privilege Escalation**: Post-exploitation enumeration to escalate from user to root.
+5.  **Documentation**: Accurate recording of steps, ensuring technical precision and clarity.
 
-Categories used on the hub:
+---
 
-| Folder | Hub section |
-|--------|-------------|
-| `active-directory` | Directory Exploitation (AD) |
-| `linux` | Linux Targets |
-| `windows` | Windows Targets |
-| `misc` | Misc Targets |
+## Repository Structure
 
-### Blogs
+- `HTB/`: Writeups for Hack The Box machines.
+- `CTFs/`: Solutions for various Capture The Flag competitions.
+- `Scripts/`: Custom scripts or PoCs used during exploitation.
+- `Assets/`: Images, diagrams, and logs referenced in the writeups.
 
-```
-content/blogs/<category>/<slug>.md
-```
+---
 
-Examples: `red-team`, `blue-team`, `tools`, `notes`, `general`.
+## Usage Information
 
-### Images (optional)
+Each writeup is designed to be:
+- **Comprehensive**: Step-by-step guidance from start to finish.
+- **Visual**: Includes screenshots of critical steps.
+- **Accessible**: Formatted code blocks for technical clarity.
 
-Put assets next to the note:
+---
 
-```
-content/writeups/linux/sau-htb.md
-content/writeups/linux/images/nmap.png
-```
+## Contact
 
-Or use a subfolder:
+If you find these writeups helpful or wish to discuss a specific technique, feel free to reach out through the repository's communication channels.
+https://h4rm0ny8.github.io/profile/
 
-```
-content/writeups/linux/sau-htb/index.md
-content/writeups/linux/sau-htb/images/screenshot.png
-```
-
-Reference in Markdown:
-
-```md
-![Nmap](images/nmap.png)
-```
-
-## Frontmatter (copy from templates)
-
-Templates live in `content/_templates/`.
-
-- Set `draft: true` to hide a note from the site.
-- `title`, `tags`, `summary` control the hub card.
-- Writeups: `platform`, `difficulty`, `os`, `initialAccess`, `privesc`.
-
-## Local preview
-
-```bash
-node scripts/build.mjs
-```
-
-Then open `_site/index.html` in the browser, or serve the folder:
-
-```bash
-npx --yes serve _site
-```
-
-## GitHub Pages
-
-1. Repo **Settings → Pages → Build and deployment**: **GitHub Actions**.
-2. Push to `main` — workflow `.github/workflows/pages.yml` publishes `_site/`.
-3. Site URL: `https://h4rm0ny8.github.io/test/` (if repo name is `test`).
-
-## Profile repo
-
-The `profile/` repo stays unchanged. Link to this hub from your profile when ready.
+> **Disclaimer**: These writeups are for educational purposes only. Always obtain explicit permission before testing any system.
